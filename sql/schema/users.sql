@@ -8,7 +8,6 @@ CREATE TABLE "public"."users" (
     "name" VARCHAR(100) NOT NULL, 
     "password" VARCHAR NOT NULL, 
     "phone_number" VARCHAR(20) UNIQUE,
-    "is_active" BOOLEAN NOT NULL DEFAULT TRUE,
     "created_time" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     "updated_time" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0)
 );
@@ -21,4 +20,3 @@ COMMENT ON COLUMN "public"."users"."password" IS '사용자 비밀번호';
 COMMENT ON COLUMN "public"."users"."phone_number" IS '휴대폰 번호';
 COMMENT ON COLUMN "public"."users"."created_time" IS '생성 시간';
 COMMENT ON COLUMN "public"."users"."updated_time" IS '최종 수정 시간';
-COMMENT ON COLUMN "public"."users"."is_active" IS '사용자 활성화 여부';

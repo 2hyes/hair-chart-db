@@ -3,13 +3,13 @@
 
 CREATE TABLE  "public"."shops" (
     seq SERIAL PRIMARY KEY, 
-    id VARCHAR(50) NOT NULL,
+    id VARCHAR(50) UNIQUE NOT NULL,
     name VARCHAR(100) NOT NULL,
     number VARCHAR(20) NOT NULL,
     biz_number VARCHAR(20) NOT NULL,
     created_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     updated_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
-    FOREIGN KEY (id) REFERENCES users(id)
+    FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 COMMENT ON COLUMN shops.seq IS 'shops테이블의 고유 시퀀스';
