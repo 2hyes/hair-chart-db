@@ -18,6 +18,5 @@ CREATE TABLE chart_item_user_options (
     created_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     updated_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (category_id) REFERENCES chart_item_default_options(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
