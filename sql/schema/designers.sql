@@ -6,7 +6,7 @@ CREATE TABLE  "public"."designers" (
     id VARCHAR(50) UNIQUE NOT NULL,
     name VARCHAR(100) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    belonging_shop_id VARCHAR(50) UNIQUE NOT NULL, -- 소속 샵
+    belonging_shop_id VARCHAR(50), -- 소속 샵
     created_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     updated_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     memo VARCHAR(4000),
