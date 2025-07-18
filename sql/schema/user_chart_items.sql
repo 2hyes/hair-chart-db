@@ -60,3 +60,9 @@ CREATE TRIGGER trigger_generate_user_option_id
     BEFORE INSERT ON chart_item_user_options
     FOR EACH ROW
     EXECUTE FUNCTION generate_user_option_id();
+
+-- updated_time 자동 갱신 트리거
+CREATE TRIGGER before_update_chart_item_user_options
+    BEFORE UPDATE ON chart_item_user_options
+    FOR EACH ROW
+    EXECUTE FUNCTION set_updated_time();

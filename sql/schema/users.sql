@@ -21,3 +21,4 @@ COMMENT ON COLUMN "public"."users"."phone_number" IS '휴대폰 번호';
 COMMENT ON COLUMN "public"."users"."created_time" IS '생성 시간';
 COMMENT ON COLUMN "public"."users"."updated_time" IS '최종 수정 시간';
 
+CREATE TRIGGER before_update BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION set_updated_time();

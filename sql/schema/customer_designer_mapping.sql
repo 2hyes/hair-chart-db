@@ -1,4 +1,5 @@
 -- 고객-디자이너 매핑 테이블 (N:M 관계)
+
 CREATE TABLE customer_designer_mapping (
     id SERIAL PRIMARY KEY,
     customer_id VARCHAR(50) NOT NULL, -- users.id (user_type=customer)

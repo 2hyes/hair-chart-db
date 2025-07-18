@@ -22,3 +22,9 @@ COMMENT ON COLUMN designers.belonging_shop_id IS '소속된 샵의 id';
 COMMENT ON COLUMN designers.created_time IS '생성일시';
 COMMENT ON COLUMN designers.updated_time IS '수정일시';
 COMMENT ON COLUMN designers.memo IS '메모';
+
+-- updated_time 자동 갱신 트리거
+CREATE TRIGGER before_update_designers
+    BEFORE UPDATE ON designers
+    FOR EACH ROW
+    EXECUTE FUNCTION set_updated_time();
